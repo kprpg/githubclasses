@@ -1,4 +1,5 @@
 ## This is a simple workflow to start off the Action discussion.
+## Demo
 ## To DEMO - Copy and paste this into a new workflow, use a PR to add it to an emtpy repo, preferably. This should kick off the workflow.
 name: GitHub Actions Demo   ## Give it a name
 on: [push]                  ## What events should this run on? - The trigger is push
