@@ -1,0 +1,19 @@
+## This is a simple workflow to start off the Action discussion.
+## To DEMO - Copy and paste this into a new workflow, use a PR to add it to an emtpy repo, preferably. This should kick off the workflow.
+name: GitHub Actions Demo   ## Give it a name
+on: [push]                  ## What events should this run on? - The trigger is push
+jobs:                       ## What jobs should this run?
+  Explore-GitHub-Actions:   ## Give it a name
+    runs-on: ubuntu-latest  ## What platform should this run on?
+    steps:                  ## What steps should this run?
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event." ## What should be run?
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"     ## What should be run?
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - name: Check out repository code ## Give it a name
+        uses: actions/checkout@v3       ## Use the checkout action
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner." ## What should be run?
+      - run: echo "🖥️ The workflow is now ready to test your code on the runner."             ## What should be run?
+      - name: List files in the repository                                                    ## Give it a name 
+        run: |                                                                              ## What should be run?
+          ls ${{ github.workspace }}                                                      ## What should be run?
+      - run: echo "🍏 This job's status is ${{ job.status }}."                          ## What should be run?
